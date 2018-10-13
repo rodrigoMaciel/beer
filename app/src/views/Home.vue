@@ -2,19 +2,19 @@
   <v-container fluid>
 
     <!-- Nosso primeiro componente -->
-    <carousel />
+    <BeerList />
 
   </v-container>
 </template>
 
 <script>
 // Importação do componente
-import Carousel from "../components/Carousel.vue";
+import BeerList from "../components/BeerList.vue";
 
 export default {
   // Registro do componente
   components: {
-    Carousel
+    BeerList
   }
 };
 </script>
