@@ -17,7 +17,7 @@
     </v-card-title>
 
     <v-card-actions>
-      <v-btn flat color="blue">Share</v-btn>
+      <v-btn flat color="blue" v-on:click="increment">Adicionar</v-btn>
       <v-btn flat color="orange">Detalhes</v-btn>
     </v-card-actions>
   </v-card>
@@ -26,11 +26,23 @@
 
 
 <script>
+import store from "@/store/cart.js";
+
 export default {
   //Recebendo a prop beer
   props: ["beer"],
   data() {
     return {};
+  },
+  methods: {
+    increment() {
+      console.log("teste");
+
+      store.commit("increment");
+    },
+    decrement() {
+      store.commit("decrement");
+    }
   }
 };
 </script>
