@@ -14,7 +14,7 @@
     </v-content>
 
     <v-navigation-drawer temporary :right="right" v-model="rightDrawer" fixed app>
-
+      <cartList />
     </v-navigation-drawer>
 
     <v-footer :fixed="fixed" app>
@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import CartList from "./components/CartList.vue";
+
 export default {
   name: "App",
   data() {
@@ -42,6 +44,9 @@ export default {
       rightDrawer: false,
       title: "Beer Company"
     };
+  },
+  components: {
+    CartList
   }
 };
 </script>

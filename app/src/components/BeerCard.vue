@@ -17,7 +17,7 @@
     </v-card-title>
 
     <v-card-actions>
-      <v-btn flat color="blue" v-on:click="increment">Adicionar</v-btn>
+      <v-btn flat color="blue" v-on:click="addToCart(beer)">Adicionar</v-btn>
       <v-btn flat color="orange">Detalhes</v-btn>
     </v-card-actions>
   </v-card>
@@ -35,13 +35,8 @@ export default {
     return {};
   },
   methods: {
-    increment() {
-      console.log("teste");
-
-      store.commit("increment");
-    },
-    decrement() {
-      store.commit("decrement");
+    addToCart(beer) {
+      store.commit("addToCart", beer);
     }
   }
 };

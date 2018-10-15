@@ -12,8 +12,23 @@ export default new Vuex.Store({
     qty: 0
   },
   mutations: {
-    increment: state => state.qty++,
-    decrement: state => state.qty--
+    addToCart(state, beer) {
+
+      let index = findIndex(state.beers, (o) => o.id == beer.id)
+
+      if (index === -1) {
+        state.beers.push({
+          id: beer.id,
+          name: beer.name,
+          price: 2.5,
+          quantity: 1,
+          image_url: beer.image_url
+        })
+      } else {
+        state.beers[index].quantity++;
+      }
+
+    },
   },
   actions: {
 
