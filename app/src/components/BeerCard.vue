@@ -17,8 +17,14 @@
     </v-card-title>
 
     <v-card-actions>
-      <v-btn flat color="blue" v-on:click="addToCart(beer)">Adicionar</v-btn>
-      <v-btn flat color="orange">Detalhes</v-btn>
+      <v-btn flat color="blue" v-on:click="addToCart(beer)">Add Cart</v-btn>
+      <v-btn :to=" {
+                name: 'Beer',
+                params: {
+                  id: beer.id
+                } 
+              }"
+          flat color="orange">View Detail</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -37,6 +43,9 @@ export default {
   methods: {
     addToCart(beer) {
       store.commit("addToCart", beer);
+    },
+    sumPriceByBeer(beer) {
+      store.commit("sumPriceByBeer", beer);
     }
   }
 };

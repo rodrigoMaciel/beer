@@ -1,20 +1,19 @@
 <template>
   <v-container fluid>
 
-    <!-- Nosso primeiro componente -->
-    <BeerList />
+    <BeerDetail />
 
   </v-container>
 </template>
 
 <script>
 // Importação do componente
-import BeerList from "../components/BeerList.vue";
+import BeerDetail from "../components/BeerDetail.vue";
 
 export default {
   // Registro do componente
   components: {
-    BeerList
+    BeerDetail
   }
 };
 </script>
