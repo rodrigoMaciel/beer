@@ -12,13 +12,20 @@
         <v-card-title primary-title>
           <div>
             <h3 class="headline mb-0">{{beer.name}}</h3>
-            <div>{{beer.description}}</div>
+            <h5 class="headline mb-0">{{beer.tagline}}</h5>
+            <p>{{beer.description}}</p>
+            <h6 class="headline mb-0">Food Pairing</h6>
+            <ul id="v-for-object" class="demo">
+              <li v-for="value in beer.food_pairing" :key="value.id">
+                {{ value }}
+              </li>
+            </ul>
           </div>
         </v-card-title>
 
         <v-card-actions>
           <v-btn flat color="orange" v-on:click="addToCart(beer)">Add Cart</v-btn>
-          <v-btn flat color="orange">Explore</v-btn>
+          <v-btn flat color="blue" :to=" { name: 'home' }">Back</v-btn>
         </v-card-actions>
       </v-card>
     </v-flex>
