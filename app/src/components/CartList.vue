@@ -139,7 +139,6 @@ export default {
 
       Object.entries(this.beers).forEach(([key, val]) => {
         let sum = val.price * val.quantity;
-        console.log(sum);
         total.push(sum); // the value of the current key.
       });
 
