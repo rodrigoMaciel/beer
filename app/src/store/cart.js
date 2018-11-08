@@ -9,8 +9,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     beers: [],
-    qty: 0,
-    sum: 0
+    qty: 1
   },
   mutations: {
     addToCart(state, beer) {
@@ -21,10 +20,12 @@ export default new Vuex.Store({
         state.beers.push({
           id: beer.id,
           name: beer.name,
+          description: beer.description,
           tagline: beer.tagline,
           ibu: beer.ibu,
           price: 2.5,
           quantity: 1,
+          food_pairing: beer.food_pairing,
           image_url: beer.image_url
         })
       } else {
@@ -53,17 +54,9 @@ export default new Vuex.Store({
 
       state.qty = state.beers[index].quantity++;
 
-    },
-    sumPriceByBeer(state, beer) {
-      state.sum = beer.price * state.qty;
-      return beer['sum'] = state.sum;
     }
   },
   actions: {
-    incrementQuantity ({ commit }) {
-      setTimeout(() => {
-        commit('incrementQuantity')
-      }, 3000)
-    }
+
   }
 })
